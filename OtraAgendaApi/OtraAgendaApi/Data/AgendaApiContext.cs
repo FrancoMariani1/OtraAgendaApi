@@ -37,37 +37,6 @@ namespace OtraAgendaApi.Data
                 UserName = "luismitoto"
             };
 
-            Contact jaimitoC = new Contact()
-            {
-                Id = 1,
-                Name = "Jaimito",
-                CelularNumber = 341457896,
-                Description = "Plomero",
-                TelephoneNumber = null,
-                UserId = karen.Id,
-
-            };
-
-            Contact pepeC = new Contact()
-            {
-                Id = 2,
-                Name = "Pepe",
-                CelularNumber = 34156978,
-                Description = "Papa",
-                TelephoneNumber = 422568,
-                UserId = luis.Id,
-            };
-
-            Contact mariaC = new Contact()
-            {
-                Id = 3,
-                Name = "Maria",
-                CelularNumber = 011425789,
-                Description = "Jefa",
-                TelephoneNumber = null,
-                UserId = karen.Id,
-            };
-
             Location jaimitoL = new Location()
             {
                 Id = 1,
@@ -92,6 +61,42 @@ namespace OtraAgendaApi.Data
                 Description = "Casa de Maria"
             };
 
+            Contact jaimitoC = new Contact()
+            {
+                Id = 1,
+                Name = "Jaimito",
+                CelularNumber = 341457896,
+                Description = "Plomero",
+                TelephoneNumber = null,
+                UserId = karen.Id,
+                LocationId = 1
+
+            };
+
+            Contact pepeC = new Contact()
+            {
+                Id = 2,
+                Name = "Pepe",
+                CelularNumber = 34156978,
+                Description = "Papa",
+                TelephoneNumber = 422568,
+                UserId = luis.Id,
+                LocationId= 2
+            };
+
+            Contact mariaC = new Contact()
+            {
+                Id = 3,
+                Name = "Maria",
+                CelularNumber = 011425789,
+                Description = "Jefa",
+                TelephoneNumber = null,
+                UserId = karen.Id,
+                LocationId = 3
+            };
+
+
+            modelBuilder.Entity<Location>().HasData(jaimitoL, pepeL, mariaL);
             modelBuilder.Entity<Contact>().HasData(jaimitoC, pepeC, mariaC);
             modelBuilder.Entity<User>().HasData(karen, luis);
 

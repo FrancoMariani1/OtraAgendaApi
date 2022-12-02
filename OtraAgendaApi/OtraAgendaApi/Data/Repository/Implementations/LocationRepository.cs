@@ -20,14 +20,18 @@ namespace OtraAgendaApi.Data.Repository.Implementations
             return _context.Locations.ToList();
         }
 
+        public Location GetById(int locationId)
+        {
+            return _context.Locations.SingleOrDefault(u => u.Id == locationId);
+        }
         public void Create(CreateAndUpdateLocationDTO dto)
         {
-
+            _context.Locations.Add(_mapper.Map<Location>(dto));
         }
 
         public void Update(CreateAndUpdateLocationDTO dto)
         {
-
+            _context.Locations.Update(_mapper.Map<Location>(dto));
         }
 
         public void Delete(int id)

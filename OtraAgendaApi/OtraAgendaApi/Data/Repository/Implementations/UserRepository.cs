@@ -10,24 +10,30 @@ namespace OtraAgendaApi.Data.Repository.Implementations
     {
         private readonly IMapper _mapper;
         private AgendaApiContext _context;
-        public static List<User> FakeUsers = new List<User>()
-        {
-            new User()
-            {
-                Email = "asdas@hotmail.com",
-                Name = "Pepe",
-                Password = "passwordsegura",
-                Id = 1,
-            },
 
-            new User()
-            {
-                Email = "lkjb@hotmail.com",
-                Name = "Andres",
-                Password = "passwordsegura1",
-                Id = 2,
-            }
-        };
+        public UserRepository(AgendaApiContext context, IMapper mapper)
+        {
+            _context = context;
+            _mapper = mapper;
+        }
+        //public static List<User> FakeUsers = new List<User>()
+        //{
+        //    new User()
+        //    {
+        //        Email = "asdas@hotmail.com",
+        //        Name = "Pepe",
+        //        Password = "passwordsegura",
+        //        Id = 1,
+        //    },
+
+        //    new User()
+        //    {
+        //        Email = "lkjb@hotmail.com",
+        //        Name = "Andres",
+        //        Password = "passwordsegura1",
+        //        Id = 2,
+        //    }
+        //};
 
         //public List<User> GetAll()
         //{
