@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using OtraAgendaApi.Data.Interfaces;
 using OtraAgendaApi.Data.Repository.Implementations;
 using OtraAgendaApi.Dto;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,11 +14,11 @@ namespace OtraAgendaApi.Controllers
     [ApiController]
     public class AuthenticationController : ControllerBase
     {
-        private readonly UserRepository _userRepository;
+        private readonly IUserRepository _userRepository;
         private readonly IConfiguration _config;
 
 
-        public AuthenticationController(UserRepository userRepository, IConfiguration config)
+        public AuthenticationController(IUserRepository userRepository, IConfiguration config)
         {
             _userRepository = userRepository;
             _config = config;
